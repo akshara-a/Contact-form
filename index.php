@@ -62,6 +62,7 @@
         $email_body = "You have received a new message. ". " Here are the details:\n Name: $name \n ". "Email: $email\n Message \n $message";
         $headers= "Reply-To: $email";
         mail($to,$email_subject,$email_body,$headers);
+        echo "Response send successfully";
     }
 
 ?>
