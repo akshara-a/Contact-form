@@ -10,8 +10,7 @@
         $to = "akshararajan1726@gmail.com";
         $email_subject = "Contact form submission: $name";
         $email_body = "You have received a new message. ". " Here are the details:\n Name: $name \n ". "Email: $email\n Message \n $message";
-        $headers = "From: $myemail\n";
-        $headers .= "Reply-To: $email";
+        $headers= "Reply-To: $email";
         mail($to,$email_subject,$email_body,$headers);
         }
     }
@@ -43,7 +42,7 @@
 </head>
 <body>
 
-    <form method="post" name="contact_form" action="contact.php">
+    <form method="post" name="contact_form" action="index.php">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Your Name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="name" required>
