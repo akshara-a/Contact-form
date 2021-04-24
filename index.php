@@ -1,18 +1,14 @@
 <?php
-    $errors = '';
     if (!empty($_POST)){
         $name = $_POST["name"]; 
         $email = $_POST["email"]; 
         $message = $_POST["message"]; 
-
-    if( empty($errors))
-        {
+        
         $to = "akshararajan1726@gmail.com";
         $email_subject = "Contact form submission: $name";
         $email_body = "You have received a new message. ". " Here are the details:\n Name: $name \n ". "Email: $email\n Message \n $message";
         $headers= "Reply-To: $email";
         mail($to,$email_subject,$email_body,$headers);
-        }
     }
 
 ?>
