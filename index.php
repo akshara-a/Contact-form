@@ -1,17 +1,3 @@
-<?php
-    if ($_SERVER["REQUEST_METHOD"]=="POST"){
-        $name = $_POST["name"]; 
-        $email = $_POST["email"]; 
-        $message = $_POST["message"];
-        $to = 'akshararajan1726@gmail.com';
-        $from = $_POST['email'];
-        $email_subject = "Contact form submission: $name";
-        $email_body = "You have received a new message. ". " Here are the details:\n Name: $name \n ". "Email: $email\n Message \n $message";
-        $headers= "Reply-To: $from";
-        mail($to,$email_subject,$email_body,$headers);
-    }
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +51,21 @@
 
 </body>
 </html>
+
+<?php
+    if ($_SERVER["REQUEST_METHOD"]=="POST"){
+        $name = $_POST["name"]; 
+        $email = $_POST["email"]; 
+        $message = $_POST["message"];
+        $to = 'akshararajan26@gmail.com';
+        $email_subject = "Contact form submission: $name";
+        $email_body = "You have received a new message. ". " Here are the details:\n Name: $name \n ". "Email: $email\n Message \n $message";
+        $headers= "Reply-To: $email";
+        mail($to,$email_subject,$email_body,$headers);
+    }
+
+?>
+
 
 
 
