@@ -15,6 +15,16 @@
         form{
             margin: 50px;
         }
+        .failed{
+            text-align: center;
+            font-size: 25px;
+            color: red;
+        }
+        .success{
+            text-align: center;
+            font-size: 25px;
+            color: green;
+        }
         @media only screen and (min-width: 800px){
             form{
                 margin: 100px 300px;
@@ -24,30 +34,21 @@
 </head>
 <body>
 
-    <form method="post" name="contact_form" action="index.php">
+    <form method="post" name="contact_form" action="">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+            <label class="form-label">Your Name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="name" required>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <label class="form-label">Email address</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" name="email" required>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
+            <label class="form-label">Your Message</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
-    <!-- Displays success message -->
-    <script>
-        $(document).ready(function(){
-        $("form").submit(function(){
-            alert("Submitted");
-        });
-        });
-    </script>
 
 </body>
 </html>
@@ -57,16 +58,17 @@
         $name = $_POST["name"]; 
         $email = $_POST["email"]; 
         $message = $_POST["message"];
-        $to = "akshararajan26@gmail.com";
+        $to="yourmail@gmail.com"; //Enter your email
         $email_subject = "Contact form submission: $name";
         $email_body = "You have received a new message. ". " Here are the details:\n Name: $name \n ". "Email: $email\n Message \n $message";
         $headers= "Reply-To: $email";
-        mail($to,$email_subject,$email_body,$headers);
+        if(mail($to,$email_subject,$email_body,$headers)){
+            echo '<div class="success"> Success! </div>';
+        }
+        else{
+            echo '<div class="failed"> Failed! </div>';
+        }
     }
 
 ?>
-
-
-
-
 
