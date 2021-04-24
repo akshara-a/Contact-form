@@ -1,7 +1,6 @@
 <?php
     $errors = '';
     if (!empty($_POST)){
-        $myemail = "akshararajan1726@gmail.com"; //Enter Your email address here.
         $name = $_POST["name"]; 
         $email = $_POST["email"]; 
         $message = $_POST["message"]; 
