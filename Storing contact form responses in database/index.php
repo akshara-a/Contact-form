@@ -78,7 +78,7 @@
         $sql="INSERT INTO interest_form (UserName, PetName, Breed, Email, Contact, Msg) VALUES ('".$name."','".$petname."', '".$breed."', '".$email."', '".$contact."', '".$message."')";
         //Execute the query and returning a message
         if(!$result = $connect->query($sql)){
-            die('Error occured [' . $conn->error . ']');
+            die('Error occured [' . $connect->error . ']');
         }
         else
             echo '<script> alert("Thank you! We will get in touch with you soon")</script>';
